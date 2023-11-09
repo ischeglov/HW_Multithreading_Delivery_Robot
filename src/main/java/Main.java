@@ -5,7 +5,7 @@ import java.util.Random;
 public class Main {
 
     public static final String LETTERS = "RLRFR";
-    
+
     public static final int NUMBER_OF_THREADS = 1000;
     public static final int ROUTE_LENGTH = 100;
 
@@ -30,7 +30,10 @@ public class Main {
         }
 
         Map.Entry<Integer, Integer> numberOfRepetitions = sizeToFreq
-                .entrySet().stream().max(Map.Entry.comparingByValue()).get();
+                .entrySet()
+                .stream()
+                .max(Map.Entry.comparingByValue())
+                .get();
         System.out.println("Самое частое количество повторений " + numberOfRepetitions.getKey() +
                 " (встретилось " + numberOfRepetitions.getValue() + " раз)");
 
